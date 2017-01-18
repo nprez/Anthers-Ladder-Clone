@@ -1,0 +1,58 @@
+body{
+	background-color: grey;
+}
+
+.match{
+	background-color: white;
+	border: 1px solid black;
+	width: 95%;
+	margin-left: 2.6%;
+	padding-top: 5px;
+}
+
+.matchtime{
+	display: inline;
+	text-align: right;
+	float: right;
+	color: gray;
+}
+
+.matchlist{
+	text-align: center;
+	background-color: #CCCCCC;
+	padding: 5px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	border: 1px solid black;
+}
+
+.matchform{
+	text-align: center;
+}
+
+.mformelement{
+	margin: 5px;
+}
+
+.navbar-form{
+	text-align: center
+}
+
+.leftmatch{
+	float:left;
+	text-align: right;
+	width: 55%;
+}
+
+.rightmatch{
+	text-align: left;
+	width: 20em;
+}
+
+.notloggedin{
+	text-align: center;
+	background-color: #AA2200;
+	color: white;
+	margin: 0;
+	padding: 5px;
+}

@@ -1,0 +1,83 @@
+<% include partials/header.ejs %>
+<div class="container">
+	<div class="row"><form class="navbar-form">
+		<div class="form-group" id="search">
+			<input type="text" class="form-control" placeholder="Player or character">
+		</div>
+		<button type="submit" class="btn btn-primary" id="submit"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+		<button class="btn btn-warning" id="reset"><span class="glyphicon glyphicon-repeat" aria-hidden="true"></span></button>
+	</form></div>
+
+	<div class="row">
+		<div class="col-md-6">
+			<h1 class="matchlist">Recent Matches</h1>
+			<% matches.forEach(function(match){ %>
+				<% var timeString = " "; %>
+				<% var totalTime = time - match.time; %>
+				<% var years = 0; %>
+				<% while(totalTime >= 12*31*24*60*60*1000){ %>
+					<% years += 1; %>
+					<% totalTime -= 12*31*24*60*60*1000; %>
+				<% } %>
+				<% var months = 0; %>
+				<% while(totalTime >= 31*24*60*60*1000){ %>
+					<% months += 1; %>
+					<% totalTime -= 31*24*60*60*1000; %>
+				<% } %>
+				<% var days = 0; %>
+				<% while(totalTime >= 24*60*60*1000){ %>
+					<% days += 1; %>
+					<% totalTime -= 24*60*60*1000; %>
+				<% } %>
+				<% var hours = 0; %>
+				<% while(totalTime >= 60*60*1000){ %>
+					<% hours += 1; %>
+					<% totalTime -= 60*60*1000; %>
+				<% } %>
+				<% var minutes = 0; %>
+				<% while(totalTime >= 60*1000){ %>
+					<% minutes += 1; %>
+					<% totalTime -= 60*1000; %>
+				<% } %>
+				<% var seconds = Math.floor(totalTime/1000); %>
+				<% if(years>0){ %>
+					<% timeString += years+" year" + (years!=1?"s":"") %>
+				<% } else if(months>0){ %>
+					<% timeString += months+" month" + (months!=1?"s":"") %>
+				<% } else if(days>0){ %>
+					<% timeString += days+" day" + (days!=1?"s":"") %>
+				<% } else if(hours>0){ %>
+					<% timeString += hours+" hour" + (hours!=1?"s":"") %>
+				<% } else if(minutes>0){ %>
+					<% timeString += minutes+" minute" + (minutes!=1?"s":"") %>
+				<% } else{ %>
+					<% timeString += seconds+" second" + (seconds!=1?"s":"") %>
+				<% } %>
+				
+				<div class="row">
+					<div class="match col-md-12">
+						<span class="leftmatch">
+								<span id="p1"><%= match.p1 %></span> <img id="p1Char" src="characters/<%= match.p1Char %>.png"> <span id="outcome"><%= match.outcome %></span> <img id="p2Char" src="characters/<%= match.p2Char %>.png">
+						</span>
+						<span class="rightmatch">
+							&nbsp;<span id="p2"><%= match.p2 %></span>
+						</span>
+						<p class="matchtime"><%= timeString %> ago</p>
+					</div>
+				</div>
+			<% }); %>
+		</div>
+		<div class="col-md-6">
+			<h1 class="matchlist">Pending Match Requests</h1>
+			<h3 class="notloggedin">Not logged in</h3>
+			<h1 class="matchlist">Your Matches</h1>
+			<h3 class="notloggedin">Not logged in</h3>
+			<div class="row"></div>
+		</div>
+	</div>
+
+</div>
+<script   src="https://code.jquery.com/jquery-3.1.1.slim.min.js"   integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="   crossorigin="anonymous"></script>
+<script src="bold.js"></script>
+
+<% include partials/footer.ejs %>

@@ -1,0 +1,76 @@
+<% include partials/header.ejs %>
+<div class="container">
+	<form class="matchform" action="/addmatch" method="POST">
+		<div><input class="mformelement" type="text" name="p1" placeholder="Player 1's Tag"/></div>
+		<div><input class="mformelement" type="text" name="p2" placeholder="Player 2's Tag"/></div>
+		<p class="mformelement">Best of what?</p>
+		<div><select name="rounds">
+			<option value=1>1</option>
+			<option value=3>3</option>
+			<option value=5>5</option>
+			<option value=7>7</option>
+			<option value=9>9</option>
+		</select></div>
+		<p class="mformelement">Player 1's Character</p>
+		<div><select class="mformelement" name="p1Char">
+			<option value="bowser">Bowser</option>
+			<option value="captain falcon">Captain Falcon</option>
+			<option value="doctor mario">Doctor Mario</option>
+			<option value="donkey kong">Donkey Kong</option>
+			<option value="falco">Falco</option>
+			<option value="fox">Fox</option>
+			<option value="ganondorf">Ganondorf</option>
+			<option value="ice climbers">Ice Climbers</option>
+			<option value="jigglypuff">Jigglypuff</option>
+			<option value="kirby">Kirby</option>
+			<option value="link">Link</option>
+			<option value="luigi">Luigi</option>
+			<option value="mario">Mario</option>
+			<option value="marth">Marth</option>
+			<option value="mewtwo">Mewtwo</option>
+			<option value="mr. game & watch">Mr. Game &amp; Watch</option>
+			<option value="ness">Ness</option>
+			<option value="peach">Peach</option>
+			<option value="pichu">Pichu</option>
+			<option value="pikachu">Pikachu</option>
+			<option value="roy">Roy</option>
+			<option value="samus">Samus</option>
+			<option value="sheik">Sheik</option>
+			<option value="yoshi">Yoshi</option>
+			<option value="young link">Young Link</option>
+			<option value="zelda">Zelda</option>
+		</select></div>
+		<p class="mformelement">Player 2's Character</p>
+		<div><select class="mformelement" name="p2Char">
+			<option value="bowser">Bowser</option>
+			<option value="captain falcon">Captain Falcon</option>
+			<option value="doctor mario">Doctor Mario</option>
+			<option value="donkey kong">Donkey Kong</option>
+			<option value="falco">Falco</option>
+			<option value="fox">Fox</option>
+			<option value="ganondorf">Ganondorf</option>
+			<option value="ice climbers">Ice Climbers</option>
+			<option value="jigglypuff">Jigglypuff</option>
+			<option value="kirby">Kirby</option>
+			<option value="link">Link</option>
+			<option value="luigi">Luigi</option>
+			<option value="mario">Mario</option>
+			<option value="marth">Marth</option>
+			<option value="mewtwo">Mewtwo</option>
+			<option value="mr. game & watch">Mr. Game &amp; Watch</option>
+			<option value="ness">Ness</option>
+			<option value="peach">Peach</option>
+			<option value="pichu">Pichu</option>
+			<option value="pikachu">Pikachu</option>
+			<option value="roy">Roy</option>
+			<option value="samus">Samus</option>
+			<option value="sheik">Sheik</option>
+			<option value="yoshi">Yoshi</option>
+			<option value="young link">Young Link</option>
+			<option value="zelda">Zelda</option>
+		</select></div>
+		<div><input class="mformelement" type="text" name="outcome" placeholder='Outcome (format: "2-1")'/></div>
+		<div><button class="btn btn-success mformelement">Add match</button></div>
+	</form>
+</div>
+<% include partials/footer.ejs %>
