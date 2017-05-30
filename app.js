@@ -39,7 +39,9 @@ app.get("/", function(req, res){
 		if(err)
 			console.log(err);
 		else{
-			var temp = matches;
+			var temp = matches.sort(function(a,b){
+				return a.time - b.time;
+			});
 			temp.reverse();
 			res.render("index.ejs", {matches:temp, time:new Date().getTime()});
 		}

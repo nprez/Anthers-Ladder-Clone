@@ -12,17 +12,17 @@
 		<div class="col-md-6">
 			<h1 class="matchlist">Recent Matches</h1>
 			<% matches.forEach(function(match){ %>
-				<% var timeString = " "; %>
+				<% var timeString = "~ "; %>
 				<% var totalTime = time - match.time; %>
 				<% var years = 0; %>
-				<% while(totalTime >= 12*31*24*60*60*1000){ %>
+				<% while(totalTime >= 365*24*60*60*1000){ %>
 					<% years += 1; %>
-					<% totalTime -= 12*31*24*60*60*1000; %>
+					<% totalTime -= 365*24*60*60*1000; %>
 				<% } %>
 				<% var months = 0; %>
-				<% while(totalTime >= 31*24*60*60*1000){ %>
+				<% while(totalTime >= (365/12)*24*60*60*1000){ %>
 					<% months += 1; %>
-					<% totalTime -= 31*24*60*60*1000; %>
+					<% totalTime -= (365/12)*24*60*60*1000; %>
 				<% } %>
 				<% var days = 0; %>
 				<% while(totalTime >= 24*60*60*1000){ %>
